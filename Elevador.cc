@@ -5,23 +5,10 @@
 
 
 # include <iostream>
-
+# include "Elevador.h"
 
 using namespace std;
 
-class Elevador {
-
-private:
-    int andar;
-    unsigned int ocupacao;//garante que não teremos um numero negativo de pessoas no elevador
-public:
-    Elevador(void);
-    void subir(int n);
-    void descer(int n);
-    //void mover(int n);
-    void entrar(int n);
-    void sair(int n);
-};
 
 Elevador::Elevador(void)
 {
@@ -29,12 +16,43 @@ Elevador::Elevador(void)
     ocupacao = 0;
 }
 
+void Elevador::subir(int n) {
+    andar+= n;
+}
+
+void Elevador::descer(int n) {
+    andar-= n;
+}
+
+void Elevador::carregar(int n) {
+    ocupacao+= n;
+}
+void Elevador::esvaziar(int n) {
+    ocupacao-= n;
+}
+
+std::ostream& operator<<(std::ostream& s,const Elevador& e)
+{
+    s<<"[ Posição = "<<e.andar<<" Ocupação = "<<e.ocupacao<<endl;
+
+    return s;
+}
+/*
+///////////////////////////////////////////////////////////////////Teste
+
 int main (void)
 {
     Elevador Aufzug;
 
-    cout<<"teste"<<endl;
+    Aufzug.carregar(2);
+    cout<<Aufzug<<endl;
+    Aufzug.subir(5);
+    cout<<Aufzug<<endl;
+    Aufzug.esvaziar(1);
+    cout<<Aufzug<<endl;
+    Aufzug.descer(3);
+    cout<<Aufzug<<endl;
     return 0;
 
-}
+}*/
 
