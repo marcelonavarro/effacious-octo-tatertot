@@ -9,12 +9,13 @@ friend std::ostream& operator<<(std::ostream&,const Elevador&);
 
 private:
     int andar;
-    unsigned int ocupacao;//garante que não teremos um numero negativo de pessoas no elevador
-    unsigned int highest;
+    int ocupacao;//Do Unsigned
+    int highest;
     int lowest;
-    unsigned int heaviest;
+    int heaviest;
 public:
     Elevador(void);
+    Elevador(int,int,int);
     void subir(int n);
     void descer(int n);
     void carregar(int n);

@@ -16,30 +16,40 @@ Elevador::Elevador(void)
     ocupacao = 0;
     highest = 5;
     lowest = 0;
-    heaviest = 1;
+    heaviest = 2;
 }
+
+Elevador::Elevador(int hg,int lw,int hv)//highest = hg;lowest = lw;heaviest = hv;
+{
+    andar = 0;
+    ocupacao = 0;
+    highest = hg;
+    lowest = lw;
+    heaviest = hv;
+}
+
 
 void Elevador::subir(int n) {
     andar+= n;
-    if(andar+n>highest)
-       andar=highest;
+    if((andar+n)>=highest)
+        andar=highest;
 }
 
 void Elevador::descer(int n) {
     andar-= n;
-    if(andar-n<lowest)
-       andar=lowest;
+    if((andar-n)<=lowest)
+        andar=lowest;
 }
 
 void Elevador::carregar(int n) {
-    if(ocupacao+n>heaviest)
-       cout<<"Perigo elevador superlotado"<<endl;
+    if((ocupacao+n)>heaviest)
+        cout<<"Perigo elevador superlotado"<<endl;
     else   ocupacao+= n;
 }
 void Elevador::esvaziar(int n) {
-    if(ocupacao-n<0)
-       ocupacao=0;
-    ocupacao-= n;
+    if((ocupacao-n)<=0)
+        ocupacao=0;
+    else ocupacao-= n;
 }
 
 std::ostream& operator<<(std::ostream& s,const Elevador& e)
@@ -53,11 +63,11 @@ std::ostream& operator<<(std::ostream& s,const Elevador& e)
 
 int main (void)
 {
-    Elevador Aufzug;
-
-    Aufzug.carregar(2);
+    Elevador Aufzug(10,-2,15);
     cout<<Aufzug<<endl;
-    Aufzug.subir(10);
+    Aufzug.carregar(16);
+    cout<<Aufzug<<endl;
+    Aufzug.subir(11);
     cout<<Aufzug<<endl;
     Aufzug.esvaziar(1);
     cout<<Aufzug<<endl;
