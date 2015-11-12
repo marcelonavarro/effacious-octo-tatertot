@@ -7,7 +7,7 @@
 # include <iostream>
 # include "Elevador.h"
 
-using namespace std;
+//using namespace std;
 
 
 Elevador::Elevador(void)
@@ -60,7 +60,7 @@ std::ostream& operator<<(std::ostream& s,const Elevador& e)
 }
 
 ///////////////////////////////////////////////////////////////////Teste
-
+/*
 int main (void)
 {
     Elevador Aufzug(10,-2,15);
@@ -76,4 +76,4 @@ int main (void)
     return 0;
 
 }
-
+*/
