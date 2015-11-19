@@ -24,17 +24,17 @@ Andar::setPermicao(string s)
 
 Andar::Liberar(Card c)
 {
-    //abrir lista de permições 
+    //TO DO abrir lista de permições 
         Card aux;
         ifstream entrada;
         entrada.open("cardBD.txt", ios::out );
         entrada>>aux;
-        if(()>=50)
+        /*if(()>=50)
         {
             Tanque = 50;
             cout<<"Capacidade do tanque maxima de 50l"<<endl<<"...enchendo o tanque"<<endl;
         }
-        
+        */
     
 }
     
